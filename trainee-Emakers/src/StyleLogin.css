@@ -148,7 +148,7 @@ body {
     border-radius: 50%;
     background-color: #87154C;
     position: absolute;
-    bottom: 157px;
+    bottom: 70px;
     right: 70px;
     opacity: 1;
     display: flex;
@@ -170,4 +170,82 @@ body {
     top: 50px;
     left: 50px;
     opacity: 1;
+}
+
+/* Botão Entrar */
+.botao-entrar {
+    width: 148px;
+    height: 35px;
+    border-radius: 5px;
+    padding: 10px;
+    gap: 10px;
+    opacity: 1;
+    background-color: #F851A2;
+    border: none;
+    cursor: pointer;
+    display: block;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+
+    /* Texto */
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 100%;
+    letter-spacing: -0.03em;
+    text-align: center;
+    color: white;
+}
+
+/* Texto de ajuda */
+.texto-ajuda {
+    width: 230px;
+    height: 28px;
+    opacity: 1;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+
+    /* Texto */
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 18px;
+    line-height: 156%;
+    letter-spacing: -0.03em;
+    color: #87154C;
+}
+
+/* Link Cadastre-se */
+.link-cadastro {
+    width: 170px;
+    height: 31px;
+    position: absolute;
+    top: 45px;
+    right: 62px;
+    opacity: 1;
+    text-decoration: none;
+
+    /* Texto */
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 20px;
+    line-height: 156%;
+    letter-spacing: -0.03em;
+    color: #87154C;
+}
+
+/* Validação de e-mail */
+.input-erro {
+    border-color: #F851A2;
+}
+
+.mensagem-erro {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 13px;
+    color: #F851A2;
+    margin-top: 5px;
 }
