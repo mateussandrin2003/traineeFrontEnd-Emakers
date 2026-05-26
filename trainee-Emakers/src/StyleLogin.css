@@ -1,5 +1,7 @@
 body {
     background-color: #FEF2FA;
+    position: relative;
+    min-height: 100vh;
 }
 
 .titulo {
@@ -14,12 +16,12 @@ body {
     background: linear-gradient(89.2deg, #F851A2 11.05%, #EC82B5 99.52%);
 
     /* Máscara */
-    -webkit-background-clip: text; 
-    background-clip: text;         
+    -webkit-background-clip: text;
+    background-clip: text;
 
     /* Transparência */
-    -webkit-text-fill-color: transparent; 
-    color: transparent;                   
+    -webkit-text-fill-color: transparent;
+    color: transparent;
 
     /* Margem */
     margin-left: auto;
@@ -32,7 +34,7 @@ body {
     font-family: 'Open Sans', sans-serif;
     font-weight: normal;
     font-size: 20px;
-    width: 572px; /* Corrigido: adicionado px */
+    width: 572px;
 
     /* Cor */
     color: #67103A;
@@ -40,7 +42,7 @@ body {
     /* Margem */
     margin-top: -35px;
     margin-left: auto;
-    margin-right: auto; 
+    margin-right: auto;
 }
 
 .quadrado-login {
@@ -62,14 +64,14 @@ body {
 
 .container-login {
     font-family: 'Open Sans', sans-serif;
-    padding: 20px;       
-    width: 390px;    
+    padding: 20px;
+    width: 390px;
 }
 
 .grupo-campo {
     display: flex;
     flex-direction: column;
-    margin-bottom: 20px; 
+    margin-bottom: 20px;
 }
 
 .texto-campo {
@@ -78,7 +80,7 @@ body {
     font-weight: 400;
     color: #87154C;
     margin-bottom: 6px;
-    opacity: 0.80; 
+    opacity: 0.80;
 }
 
 .area-senha {
@@ -88,15 +90,15 @@ body {
 }
 
 .input-login {
-    width: 100%;         
+    width: 100%;
     padding: 12px;
-    padding-right: 40px; 
+    padding-right: 40px;
     border: 1px solid #ccc;
     border-radius: 5px;
     font-family: "Open Sans", sans-serif;
     font-size: 16px;
-    outline: none;       
-    transition: 0.2s;    
+    outline: none;
+    transition: 0.2s;
     box-sizing: border-box;
     background-color: rgba(251, 216, 238, 0.50);
 }
@@ -107,40 +109,65 @@ body {
 
 .icone-olho {
     position: absolute;
-    right: 15px;        
-    color: #87154C;     
-    cursor: pointer;    
+    right: 15px;
+    color: #87154C;
+    cursor: pointer;
     font-size: 18px;
     opacity: 0.80;
 }
 
 .link-esqueceu-senha {
-    /* Dimensões */
-    display: block; /* Força o link a ocupar sua própria linha */
+    display: block;
     width: 188px;
     height: 30px;
-    margin-top: -5px; /* Ajusta o espaçamento abaixo do campo de senha */
+    margin-top: -5px;
     opacity: 1;
-
-    /* Configurações de Texto fornecidas */
     font-family: 'Open Sans', sans-serif;
     font-weight: 400;
-    font-style: normal; 
+    font-style: normal;
     font-size: 18px;
-    line-height: 156%;      
-    letter-spacing: -0.03em; 
-    text-decoration: none;  
-
-    /* O Degradê aplicado no texto */
+    line-height: 156%;
+    letter-spacing: -0.03em;
+    text-decoration: none;
     background: linear-gradient(89.2deg, #F851A2 11.05%, #EC82B5 99.52%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
     color: transparent;
-
     transition: 0.2s;
 }
 
 .link-esqueceu-senha:hover {
     opacity: 0.8;
+}
+
+/* Ícone de mensagem */
+.circulo-mensagem {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: #87154C;
+    position: absolute;
+    bottom: 157px;
+    right: 70px;
+    opacity: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icone-mensagem {
+    width: 400px;
+    height: 30px;
+    color: white;
+}
+
+/* Logo */
+.logo {
+    width: 116.61px;
+    height: 59px;
+    position: relative;
+    top: 50px;
+    left: 50px;
+    opacity: 1;
 }

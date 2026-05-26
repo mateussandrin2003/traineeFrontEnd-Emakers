@@ -1,11 +1,17 @@
 import { useState } from "react";
-import "./paginaLogin.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEye, faEyeSlash, faMessage } from "@fortawesome/free-regular-svg-icons";
+import "./StyleLogin.css";
+import logo from "./Imagens/Logo.png";  
 
 export default function PaginaDeLogin() {
   const [mostrarSenha, setMostrarSenha] = useState(false);
 
   return (
     <>
+      {/* Logo */}
+      <img src={logo} alt="Logo" className="logo" />
+
       {/* Textos de login */}
       <h1 className="titulo">Login</h1>
       <h5 className="subtitulo">
@@ -33,8 +39,9 @@ export default function PaginaDeLogin() {
                 id="senha"
                 className="input-login"
               />
-              <i
-                className={`fa-regular ${mostrarSenha ? "fa-eye-slash" : "fa-eye"} icone-olho`}
+              <FontAwesomeIcon
+                icon={mostrarSenha ? faEyeSlash : faEye}
+                className="icone-olho"
                 onClick={() => setMostrarSenha((prev) => !prev)}
               />
             </div>
@@ -46,6 +53,11 @@ export default function PaginaDeLogin() {
           </a>
 
         </div>
+      </div>
+
+      {/* Ícone de mensagem */}
+      <div className="circulo-mensagem">
+        <FontAwesomeIcon icon={faMessage} className="icone-mensagem" />
       </div>
     </>
   );
