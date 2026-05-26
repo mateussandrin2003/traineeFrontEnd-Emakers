@@ -1,0 +1,146 @@
+body {
+    background-color: #FEF2FA;
+}
+
+.titulo {
+    /* Fonte */
+    font-family: 'Oxanium', sans-serif;
+    font-size: 60px;
+    font-weight: bold;
+    width: 155px;
+    height: 67px;
+
+    /* Degradê */
+    background: linear-gradient(89.2deg, #F851A2 11.05%, #EC82B5 99.52%);
+
+    /* Máscara */
+    -webkit-background-clip: text; 
+    background-clip: text;         
+
+    /* Transparência */
+    -webkit-text-fill-color: transparent; 
+    color: transparent;                   
+
+    /* Margem */
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 94px;
+}
+
+.subtitulo {
+    /* Fonte */
+    font-family: 'Open Sans', sans-serif;
+    font-weight: normal;
+    font-size: 20px;
+    width: 572px; /* Corrigido: adicionado px */
+
+    /* Cor */
+    color: #67103A;
+
+    /* Margem */
+    margin-top: -35px;
+    margin-left: auto;
+    margin-right: auto; 
+}
+
+.quadrado-login {
+    /* Estrutura */
+    width: 537px;
+    height: 403px;
+    border-radius: 10px;
+
+    /* Fundo com opacidade isolada */
+    background-color: rgba(254, 233, 243, 0.25);
+
+    /* Margem */
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-login {
+    font-family: 'Open Sans', sans-serif;
+    padding: 20px;       
+    width: 390px;    
+}
+
+.grupo-campo {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px; 
+}
+
+.texto-campo {
+    font-family: "Open Sans", sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: #87154C;
+    margin-bottom: 6px;
+    opacity: 0.80; 
+}
+
+.area-senha {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-login {
+    width: 100%;         
+    padding: 12px;
+    padding-right: 40px; 
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+    outline: none;       
+    transition: 0.2s;    
+    box-sizing: border-box;
+    background-color: rgba(251, 216, 238, 0.50);
+}
+
+.input-login:focus {
+    border-color: #F851A2;
+}
+
+.icone-olho {
+    position: absolute;
+    right: 15px;        
+    color: #87154C;     
+    cursor: pointer;    
+    font-size: 18px;
+    opacity: 0.80;
+}
+
+.link-esqueceu-senha {
+    /* Dimensões */
+    display: block; /* Força o link a ocupar sua própria linha */
+    width: 188px;
+    height: 30px;
+    margin-top: -5px; /* Ajusta o espaçamento abaixo do campo de senha */
+    opacity: 1;
+
+    /* Configurações de Texto fornecidas */
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-style: normal; 
+    font-size: 18px;
+    line-height: 156%;      
+    letter-spacing: -0.03em; 
+    text-decoration: none;  
+
+    /* O Degradê aplicado no texto */
+    background: linear-gradient(89.2deg, #F851A2 11.05%, #EC82B5 99.52%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+
+    transition: 0.2s;
+}
+
+.link-esqueceu-senha:hover {
+    opacity: 0.8;
+}
