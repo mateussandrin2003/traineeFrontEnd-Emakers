@@ -6,48 +6,35 @@ body {
     background-color: #FEF2FA;
 }
 
-/* Header - O Retângulo Principal */
+/* Header - O Retângulo Principal (1920x100) */
 .header-plataforma {
     width: 100%;
     height: 100px;
     background-color: #653654;
     opacity: 1;
     display: flex;
-    align-items: center;
+    align-items: center; /* Centraliza verticalmente todos os blocos internos */
     justify-content: space-between;
     padding: 0 40px; /* Margem interna nas pontas */
     box-sizing: border-box;
-    position: relative;
 }
 
 /* ==========================================================================
-   DIVISÕES DO HEADER
+   DIVISÕES DO HEADER (As 3 Caixas organizadoras)
    ========================================================================== */
 
-/* Lado Esquerdo: Serve como base para o posicionamento da logo */
 .header-esquerda {
     width: 30%;
-    height: 100%;
-    position: relative; /* Mantido para que a imagem se oriente por ele */
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Alinha a logo à esquerda */
 }
 
-.link-logo {
-    display: block;
-    width: 100%;
-    height: 100%;
-}
-
-/* Posiciona a logo colada na borda superior esquerda */
-.header-esquerda .imagem-logo-home {
-    height: 140px;            /* Tamanho regulável da imagem */
+/* Estilização real e direta da Logo conforme o gabarito */
+.logo-plataforma {
+    height: 50px; /* Tamanho proporcional para ficar idêntico ao gabarito */
     width: auto;
     display: block;
-    object-fit: contain;
-    
-    /* Força ir para a Borda Superior Esquerda */
-    position: absolute;       
-    top: 5px;                 /* Distância do topo do retângulo roxo (Ajuste para menos se quiser colar mais) */
-    left: 10px;               /* Distância da borda esquerda */
 }
 
 .header-centro {
@@ -57,7 +44,7 @@ body {
 }
 
 .header-direita {
-    width: 40%;
+    width: 30%;
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -65,7 +52,7 @@ body {
 }
 
 /* ==========================================================================
-   ESTILOS DOS ELEMENTOS
+   ESTILOS DOS ELEMENTOS (Gabarito do Figma)
    ========================================================================== */
 
 /* Configurações do Texto MINDEMY */

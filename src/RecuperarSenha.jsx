@@ -24,9 +24,9 @@ export default function RecuperarSenha() {
   return (
     <>
       {/* Logo */}
-        <a href="https://www.google.com/">
-            <img src={logo} alt="Logo" className="logo" />
-        </a>
+        <Link to="/plataforma">
+          <img src={logo} alt="Logo" className="logo" />
+        </Link>
 
       {/* Título e Subtítulo */}
       <h1 className="titulo" style={{ width: "auto", textAlign: "center" }}>

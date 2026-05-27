@@ -5,6 +5,7 @@ import { faEye, faEyeSlash, faMessage } from "@fortawesome/free-regular-svg-icon
 import "./StyleLogin.css";
 import logo from "./Imagens/Logo.png";
 
+
 export default function PaginaDeCadastro() {
   // Estados dos campos
   const [nome, setNome] = useState("");
@@ -66,7 +67,8 @@ export default function PaginaDeCadastro() {
   return (
     <>
       {/* Logo */}
-      <Link to="/">
+      {/* Logo idêntica à da página de login */}
+      <Link to="/plataforma">
         <img src={logo} alt="Logo" className="logo" />
       </Link>
 
