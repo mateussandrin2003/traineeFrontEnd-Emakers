@@ -20,9 +20,34 @@ body {
     position: relative;
 }
 
-/* Divisões do Header para alinhamento correto */
+/* ==========================================================================
+   DIVISÕES DO HEADER
+   ========================================================================== */
+
+/* Lado Esquerdo: Serve como base para o posicionamento da logo */
 .header-esquerda {
     width: 30%;
+    height: 100%;
+    position: relative; /* Mantido para que a imagem se oriente por ele */
+}
+
+.link-logo {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+/* Posiciona a logo colada na borda superior esquerda */
+.header-esquerda .imagem-logo-home {
+    height: 140px;            /* Tamanho regulável da imagem */
+    width: auto;
+    display: block;
+    object-fit: contain;
+    
+    /* Força ir para a Borda Superior Esquerda */
+    position: absolute;       
+    top: 5px;                 /* Distância do topo do retângulo roxo (Ajuste para menos se quiser colar mais) */
+    left: 10px;               /* Distância da borda esquerda */
 }
 
 .header-centro {
@@ -39,6 +64,10 @@ body {
     gap: 30px; /* Espaço entre pesquisa, carrinho e perfil */
 }
 
+/* ==========================================================================
+   ESTILOS DOS ELEMENTOS
+   ========================================================================== */
+
 /* Configurações do Texto MINDEMY */
 .logo-mindemy-texto {
     color: #FFFFFF;
@@ -47,7 +76,7 @@ body {
     font-style: normal;
     font-size: 18px;
     line-height: 156%;
-    letter-spacing: 0.28em; /* O 28% do figma */
+    letter-spacing: 0.28em; 
     text-align: center;
     text-transform: uppercase;
 }
@@ -83,7 +112,7 @@ body {
     /* Configurações de texto pedidas */
     font-family: 'Open Sans', sans-serif;
     font-weight: 400;
-    font-size: 16px; /* Ajustado levemente para caber bem no espaço */
+    font-size: 16px; 
     letter-spacing: -0.03em;
     color: #67103A;
 }
@@ -125,12 +154,5 @@ body {
 /* Ícone de perfil dentro do círculo */
 .icone-perfil {
     font-size: 25px;
-    color: #653654; /* Cor combinando com o Header para dar contraste */
-}
-
-.header-esquerda {
-    width: 30%;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start; /* Alinha a logo bem no início esquerdo */
+    color: #653654; 
 }
