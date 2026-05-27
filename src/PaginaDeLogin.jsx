@@ -30,9 +30,9 @@ export default function PaginaDeLogin() {
   return (
     <>
       {/* Logo */}
-      <a href="https://www.google.com/">
+      <Link to="plataforma/">
         <img src={logo} alt="Logo" className="logo" />
-      </a>
+      </Link>
 
       {/* Link Cadastre-se */}
       <Link to="/cadastrar" className="link-cadastro">Cadastre-se agora</Link>

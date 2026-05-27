@@ -1,0 +1,136 @@
+/* Reset básico para a página principal */
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #FEF2FA;
+}
+
+/* Header - O Retângulo Principal */
+.header-plataforma {
+    width: 100%;
+    height: 100px;
+    background-color: #653654;
+    opacity: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px; /* Margem interna nas pontas */
+    box-sizing: border-box;
+    position: relative;
+}
+
+/* Divisões do Header para alinhamento correto */
+.header-esquerda {
+    width: 30%;
+}
+
+.header-centro {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+}
+
+.header-direita {
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 30px; /* Espaço entre pesquisa, carrinho e perfil */
+}
+
+/* Configurações do Texto MINDEMY */
+.logo-mindemy-texto {
+    color: #FFFFFF;
+    font-family: 'Arimo', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 18px;
+    line-height: 156%;
+    letter-spacing: 0.28em; /* O 28% do figma */
+    text-align: center;
+    text-transform: uppercase;
+}
+
+/* Barra de Pesquisa */
+.barra-pesquisa {
+    display: flex;
+    align-items: center;
+    width: 301px;
+    height: 43px;
+    background-color: #FEE9F3;
+    border: 1px solid #67103A;
+    border-radius: 50px;
+    padding: 0 15px;
+    gap: 15px;
+    box-sizing: border-box;
+}
+
+/* Ícone da Lupa dentro da Pesquisa */
+.icone-lupa {
+    width: 15px;
+    height: 15px;
+    color: #67103A;
+}
+
+/* Input invisível dentro da barra estilizada */
+.input-pesquisa {
+    width: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    
+    /* Configurações de texto pedidas */
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-size: 16px; /* Ajustado levemente para caber bem no espaço */
+    letter-spacing: -0.03em;
+    color: #67103A;
+}
+
+.input-pesquisa::placeholder {
+    color: #67103A;
+    opacity: 0.7;
+}
+
+/* Ícone do Carrinho */
+.icone-carrinho {
+    font-size: 24px;
+    color: #FFFFFF;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.icone-carrinho:hover {
+    opacity: 0.8;
+}
+
+/* Círculo do Perfil que leva ao Login */
+.circulo-perfil {
+    width: 40px;
+    height: 40px;
+    background-color: #FEE9F3;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: transform 0.2s;
+}
+
+.circulo-perfil:hover {
+    transform: scale(1.05);
+}
+
+/* Ícone de perfil dentro do círculo */
+.icone-perfil {
+    font-size: 25px;
+    color: #653654; /* Cor combinando com o Header para dar contraste */
+}
+
+.header-esquerda {
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Alinha a logo bem no início esquerdo */
+}
