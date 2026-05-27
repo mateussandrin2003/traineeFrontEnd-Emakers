@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom"; // << IMPORTAÇÃO QUE FALTAVA PARA NÃO DAR TELA BRANCA
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash, faMessage } from "@fortawesome/free-regular-svg-icons";
 import "./StyleLogin.css";
@@ -34,10 +35,10 @@ export default function PaginaDeLogin() {
       </a>
 
       {/* Link Cadastre-se */}
-      <a href="https://www.google.com/" className="link-cadastro">Cadastre-se agora</a>
+      <Link to="/cadastrar" className="link-cadastro">Cadastre-se agora</Link>
 
       {/* Textos de login */}
-      <h1 className="titulo">Login</h1>
+      <h1 className="titulo">Login</h1> {/* Corrigido: Removido o classhtmlfor daqui */}
       <h5 className="subtitulo">
         Digite o endereço de e-mail e a senha da sua conta Mindemy.
       </h5>
@@ -85,10 +86,10 @@ export default function PaginaDeLogin() {
             )}
           </div>
 
-          {/* Lembrar de trocar o hiperlink */}
-          <a href="https://www.google.com/" className="link-esqueceu-senha">
+          {/* HyperLink \"Esqueceu sua senha?\" */}
+          <Link to="/recuperar-senha" className="link-esqueceu-senha">
             Esqueceu sua senha?
-          </a>
+          </Link>
 
           {/* Botão Entrar */}
           <button className="botao-entrar" onClick={handleEntrar}>Entrar</button>
