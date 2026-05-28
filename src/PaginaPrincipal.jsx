@@ -14,8 +14,8 @@ export default function PaginaPrincipal() {
         
         {/* Lado Esquerdo: Container da Logo */}
         <div className="header-esquerda">
-          <Link to="/plataforma" className="link-logo">
-            <img src={logo} alt="Logo" className="imagem-logo-home" />
+          <Link to="/plataforma">
+            <img src={logo} alt="Logo" className="logo-plataforma" />
           </Link>
         </div>
 
@@ -42,7 +42,7 @@ export default function PaginaPrincipal() {
             <FontAwesomeIcon icon={faCartShopping} className="icone-carrinho" />
           </div>
 
-          {/* Ícone do Perfil dentro do Círculo (Clica e vai para o Login) */}
+          {/* Ícone do Perfil dentro do Círculo */}
           <Link to="/" className="circulo-perfil" title="Ir para o Login">
             <FontAwesomeIcon icon={faCircleUser} className="icone-perfil" />
           </Link>
@@ -50,9 +50,39 @@ export default function PaginaPrincipal() {
         </div>
       </header>
 
-      {/* CONTEÚDO PRINCIPAL */}
-      <main className="conteudo-principal">
-      </main>
+      {/* CONTEÚDO PRINCIPAL RESPONSIVO */}
+    <main className="conteudo-principal">
+        <div className="flex-conteudo-home">
+
+    {/* Título Principal */}
+            <h1 className="titulo-principal-home">
+                <span className="texto-degrade">&gt;&gt; </span>
+                <span className="destaque-adquira">Adquira</span>
+                <br />
+                <span className="texto-degrade">
+                    habilidades práticas e transforme sua carreira com cursos que preparam você para o mercado de trabalho
+                </span>
+            </h1>
+
+    {/* Subtítulo */}
+            <p className="subtitulo-home">
+                Aprenda hoje, conquiste o amanhã!
+                <br />
+                Invista no seu Sucesso!
+            </p>
+
+    {/* Nova Caixa de Pesquisa de Cursos */}
+            <div className="barra-pesquisa-cursos">
+                <FontAwesomeIcon icon={faMagnifyingGlass} className="icone-lupa-cursos" />
+                <input 
+                type="text" 
+                placeholder="Pesquisar por algum curso" 
+                className="input-pesquisa-cursos"
+                />
+            </div>
+
+        </div>
+    </main>
 
     </div>
   );

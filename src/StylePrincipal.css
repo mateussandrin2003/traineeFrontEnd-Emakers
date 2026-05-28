@@ -3,7 +3,7 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: #FEF2FA;
+    background-color: #FEE9F3; /* Cor pedida do background */
 }
 
 /* Header - O Retângulo Principal (1920x100) */
@@ -13,26 +13,26 @@ body {
     background-color: #653654;
     opacity: 1;
     display: flex;
-    align-items: center; /* Centraliza verticalmente todos os blocos internos */
+    align-items: center; 
     justify-content: space-between;
-    padding: 0 40px; /* Margem interna nas pontas */
+    padding: 0 40px; 
     box-sizing: border-box;
 }
 
 /* ==========================================================================
-   DIVISÕES DO HEADER (As 3 Caixas organizadoras)
+   DIVISÕES DO HEADER
    ========================================================================== */
 
 .header-esquerda {
     width: 30%;
     display: flex;
     align-items: center;
-    justify-content: flex-start; /* Alinha a logo à esquerda */
+    justify-content: flex-start;
 }
 
-/* Estilização real e direta da Logo conforme o gabarito */
+/* Ajustado para a classe correta do seu JSX */
 .logo-plataforma {
-    height: 50px; /* Tamanho proporcional para ficar idêntico ao gabarito */
+    height: 50px; 
     width: auto;
     display: block;
 }
@@ -48,14 +48,13 @@ body {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    gap: 30px; /* Espaço entre pesquisa, carrinho e perfil */
+    gap: 30px; 
 }
 
 /* ==========================================================================
-   ESTILOS DOS ELEMENTOS (Gabarito do Figma)
+   ESTILOS DOS ELEMENTOS DO HEADER
    ========================================================================== */
 
-/* Configurações do Texto MINDEMY */
 .logo-mindemy-texto {
     color: #FFFFFF;
     font-family: 'Arimo', sans-serif;
@@ -68,7 +67,6 @@ body {
     text-transform: uppercase;
 }
 
-/* Barra de Pesquisa */
 .barra-pesquisa {
     display: flex;
     align-items: center;
@@ -82,21 +80,17 @@ body {
     box-sizing: border-box;
 }
 
-/* Ícone da Lupa dentro da Pesquisa */
 .icone-lupa {
     width: 15px;
     height: 15px;
     color: #67103A;
 }
 
-/* Input invisível dentro da barra estilizada */
 .input-pesquisa {
     width: 100%;
     background: transparent;
     border: none;
     outline: none;
-    
-    /* Configurações de texto pedidas */
     font-family: 'Open Sans', sans-serif;
     font-weight: 400;
     font-size: 16px; 
@@ -109,7 +103,6 @@ body {
     opacity: 0.7;
 }
 
-/* Ícone do Carrinho */
 .icone-carrinho {
     font-size: 24px;
     color: #FFFFFF;
@@ -121,7 +114,6 @@ body {
     opacity: 0.8;
 }
 
-/* Círculo do Perfil que leva ao Login */
 .circulo-perfil {
     width: 40px;
     height: 40px;
@@ -138,8 +130,138 @@ body {
     transform: scale(1.05);
 }
 
-/* Ícone de perfil dentro do círculo */
 .icone-perfil {
     font-size: 25px;
     color: #653654; 
+}
+
+/* ==========================================================================
+   CONTEÚDO PRINCIPAL RESPONSIVO E RELATIVO
+   ========================================================================== */
+
+.conteudo-principal {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Contêiner invisível que cria a margem elástica da esquerda */
+.flex-conteudo-home {
+    width: 100%;
+    /* Substitui o "left: 367px". Cria um recuo baseado na largura da tela (aprox. 19%) */
+    padding-left: 19%; 
+    /* Substitui o "top: 230px". Cria o espaçamento perfeito abaixo do header roxo */
+    padding-top: 130px; 
+    padding-right: 40px; /* Margem de segurança para telas muito pequenas */
+    box-sizing: border-box;
+}
+
+/* Caixa do título principal dinâmica e fluida */
+.titulo-principal-home {
+    /* Em vez de travar em 630px, ele se adapta a telas menores, mas nunca passa de 630px */
+    max-width: 630px;
+    width: 100%;
+    height: auto; /* A altura agora se adapta organicamente conforme o texto quebra */
+    margin: 0;
+    opacity: 1;
+
+    /* Configurações de Tipografia */
+    font-family: 'Oxanium', sans-serif;
+    font-weight: 700;
+    font-size: 60px;
+    line-height: 105%;
+    letter-spacing: -0.06em;
+}
+
+/* Palavra "Adquira" com a cor de fundo sólida */
+.destaque-adquira {
+    color: #87154C;
+    padding: 2px 15px;      
+    border-radius: 4px;     
+    display: inline-block;  
+    margin-bottom: 8px;     
+}
+
+/* Restante do texto em degradê */
+.texto-degrade {
+    background: linear-gradient(89.2deg, #F851A2 11.05%, #EC82B5 99.52%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    display: inline;
+}
+
+/* Novo Subtítulo Dinâmico e Alinhado */
+.subtitulo-home {
+    /* Em vez de travar em 629px, ele se adapta, mas nunca passa disso */
+    max-width: 629px;
+    width: 100%;
+    height: auto;
+    opacity: 1;
+    
+    /* Cria o distanciamento perfeito em relação ao título de cima de forma fluida */
+    margin-top: 40px; 
+    margin-bottom: 0;
+
+    /* Configurações de Tipografia solicitadas do Figma */
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 156%;
+    letter-spacing: -0.03em; /* Equivalente a -3% */
+    color: #87154C;
+}
+
+/* ==========================================================================
+   CAIXA DE PESQUISA DE CURSOS (BAIXO DO TEXTO)
+   ========================================================================== */
+
+.barra-pesquisa-cursos {
+    display: flex;
+    align-items: center;
+    max-width: 629px; /* Medida limite do figma */
+    width: 100%;       /* Relativo para acompanhar a tela */
+    height: 45px;
+    opacity: 0.7;
+    border-radius: 50px;
+    padding-left: 10px;
+    padding-right: 10px;
+    gap: 15px;
+    border: 1px solid #87154C; /* Cor da borda especificada */
+    background-color: transparent; /* Mantém o fundo integrado com a página */
+    box-sizing: border-box;
+    
+    /* Afastamento proporcional em relação ao subtítulo */
+    margin-top: 36px; 
+}
+
+/* Ícone de Lupa com tamanho e cor exatos */
+.icone-lupa-cursos {
+    width: 15px; /* Arredondado dos 15.01px do Figma */
+    height: 15px;
+    color: #87154C;
+    opacity: 1;
+}
+
+/* Input interno com toda a estilização e tipografia pedida */
+.input-pesquisa-cursos {
+    width: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    
+    /* Configurações do Figma para o texto escrito */
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 18px;
+    line-height: 156%;
+    letter-spacing: -0.03em; /* Equivalente a -3% */
+    color: #87154C;
+}
+
+/* Garante que o texto de placeholder temporário herde as mesmas propriedades */
+.input-pesquisa-cursos::placeholder {
+    color: #87154C;
+    opacity: 1;
 }
