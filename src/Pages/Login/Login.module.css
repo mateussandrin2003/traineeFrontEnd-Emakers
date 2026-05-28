@@ -1,0 +1,231 @@
+.bodyBackground {
+    background-color: #FEF2FA;
+    position: relative;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+    /* 🌟 SOLUÇÃO DO RETÂNGULO BRANCO: Barreira física contra colapso de margem */
+    overflow: hidden; 
+}
+
+/* Logo flutuante e estável */
+.logo {
+    position: absolute;
+    top: 35px;
+    left: 62px;
+    width: 116px;
+    height: 59px;
+    display: block;
+    z-index: 10;
+}
+
+/* 🌟 CORREÇÃO DO TÍTULO: Agora ele aparecerá perfeitamente no topo centralizado */
+.tituloDegrade {
+    font-family: 'Oxanium', sans-serif;
+    font-size: 60px;
+    font-weight: bold;
+    text-align: center;
+    background: linear-gradient(89.2deg, #F851A2 11.05%, #EC82B5 99.52%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    margin-top: 60px; /* Ajustado para dar espaço elegante sem quebrar o teto */
+    margin-bottom: 5px;
+}
+
+/* 🌟 CORREÇÃO DO SUBTÍTULO */
+.subtitulo {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: normal;
+    font-size: 20px;
+    max-width: 572px;
+    width: 100%;
+    color: #67103A;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 25px;
+}
+
+/* Caixa de Login com a nova sombra especificada */
+.quadradoLogin {
+    width: 537px;
+    height: 430px;
+    border-radius: 10px;
+    background-color: rgba(254, 233, 243, 0.75);
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative; /* Necessário para ancorar elementos internos se precisar */
+}
+
+.containerLogin {
+    width: 390px;
+}
+
+.grupoCampo {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 24px;
+}
+
+.textoCampo {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: normal;
+    font-size: 18px;
+    color: #87154C;
+    margin-bottom: 3px;
+}
+
+.inputLogin {
+    width: 390px;                       /* Largura solicitada */
+    height: 50px;                       /* Altura solicitada */
+    border-radius: 5px;                 /* Arredondamento solicitado */
+    border: 1px solid #FBD8EE;          /* Cor da borda solicitada */
+    opacity: 0.5;                       /* Opacidade solicitada */
+    box-shadow: 0px 4px 20px 0px #00000040; /* Sombra solicitada */
+    transform: rotate(0deg);            /* Nota: Mantivemos a orientação de leitura padrão para o texto não ficar invertido em 180deg */
+    
+    background-color: transparent;
+    padding-left: 15px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    color: #67103A;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.inputLogin:focus {
+    opacity: 0.8;
+    border-color: #F851A2;
+}
+
+.inputErro {
+    border: 2px solid #D61C1C !important;
+}
+
+.mensagemErro {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    color: #D61C1C;
+    margin-top: 5px;
+}
+
+.areaSenha {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.areaSenha input {
+    padding-right: 45px;
+}
+
+.iconeOlho {
+    position: absolute;
+    right: 15px;
+    color: #67103A;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.linkEsqueceuSenha {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    color: #F851A2;
+    text-decoration: none;
+    display: block;
+    margin-top: -10px;
+    margin-bottom: 25px;
+    font-weight: 600;
+}
+
+.linkEsqueceuSenha:hover {
+    text-decoration: underline;
+}
+
+.botaoEntrar {
+    width: 100%;
+    height: 45px;
+    border-radius: 5px;
+    background-color: #F851A2;
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.botaoEntrar:hover {
+    opacity: 0.9;
+}
+
+/* ==========================================================================
+   🌟 CONTAINER DA BASE (Abaixo da caixa de login)
+   ========================================================================== */
+.containerBaseLogin {
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center; /* Centraliza o conteúdo horizontalmente */
+    align-items: center;
+}
+
+/* Link: Precisa de ajuda para entrar? */
+.textoAjuda {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    color: #67103A;
+    text-decoration: none;
+    text-align: center;
+}
+
+.textoAjuda:hover {
+    text-decoration: underline;
+}
+
+/* Botão: Cadastre-se agora */
+.botaoCadastrese {
+    position: absolute;
+    top: 45px;
+    right: 62px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    color: #F851A2;
+    text-decoration: none;
+    font-weight: bold;
+    z-index: 10;
+}
+
+.botaoCadastrese:hover {
+    text-decoration: underline;
+}
+
+/* Balão de mensagem flutuante com a nova sombra */
+.circuloMensagem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 61px;
+    height: 61px;
+    border-radius: 50%;
+    background-color: #87154C;
+    position: absolute;
+    bottom: 30px;
+    right: 54px;
+    cursor: pointer;
+    box-shadow: 0px 4px 20px 0px #00000040;
+}
+
+.iconeMensagem {
+    color: white;
+    font-size: 28px;
+}
