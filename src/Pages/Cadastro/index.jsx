@@ -3,12 +3,14 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash, faMessage } from "@fortawesome/free-regular-svg-icons";
 
-// Injetando o escopo modular do CSS
 import styles from "./Cadastro.module.css";
-import logo from "../../assets/Imagens/Logo.png"; 
+import Logo from "../../components/Logo/Logo";
+import Chat from "../../Components/Chat/Chat";
 
 export default function PaginaDeCadastro() {
   const [mostrarSenha, setMostrarSenha] = useState(false);
+  const [mostrarConfimarSenha, setMostrarConfirmarSenha] = useState(false);
+  
   const [nome, setNome] = useState("");
   const [cpf, setCpf] = useState("");
   const [cpfValido, setCpfValido] = useState(true);
@@ -16,6 +18,10 @@ export default function PaginaDeCadastro() {
   const [emailValido, setEmailValido] = useState(true);
   const [senha, setSenha] = useState("");
   const [senhaValida, setSenhaValida] = useState(true);
+  
+  // 🌟 NOVOS ESTADOS DA CONFIRMAÇÃO DE SENHA
+  const [confirmarSenha, setConfirmarSenha] = useState("");
+  const [senhasBatem, setSenhasBatem] = useState(true);
 
   function handleCadastrar() {
     const regexCpf = /^\d{3}\.\d{3}\.\d{3}-\d{2}$|^\d{11}$/;
@@ -25,12 +31,14 @@ export default function PaginaDeCadastro() {
     const cpfOk = regexCpf.test(cpf);
     const emailOk = regexEmail.test(email);
     const senhaOk = regexSenha.test(senha);
+    const bateu = senha === confirmarSenha;
 
     setCpfValido(cpfOk);
     setEmailValido(emailOk);
     setSenhaValida(senhaOk);
+    setSenhasBatem(bateu);
 
-    if (nome && cpfOk && emailOk && senhaOk) {
+    if (nome && cpfOk && emailOk && senhaOk && bateu) {
       alert("Cadastro realizado com sucesso!");
     }
   }
@@ -38,10 +46,17 @@ export default function PaginaDeCadastro() {
   return (
     <div className={styles.bodyBackground}>
       
-      {/* Logo */}
-      <Link to="/plataforma">
-        <img src={logo} alt="Logo" className={styles.logo} />
+      {/* Logo no canto superior esquerdo */}
+      <Logo />
+
+      {/* 🌟 NOVO: Link de Fazer Login no canto superior direito */}
+      <Link to="/" className={styles.botaoFazerLogin}>
+        Fazer Login
       </Link>
+
+      {/* 🌟 TÍTULO E SUBTÍTULO INJETADOS */}
+      <h1 className={styles.tituloDegrade}>Invista no seu sucesso!</h1>
+      <p className={styles.subtitulo}>Crie sua conta agora e tenha acesso a cursos exclusivos, desenvolvidos por especialistas, para você dominar as habilidades mais requisitadas do mercado. Invista no seu futuro e aprenda no seu ritmo, com conteúdo de qualidade e atualizado. Não perca tempo, o futuro da tecnologia espera por você!</p>
 
       {/* Quadrado do formulário */}
       <div className={styles.quadradoCadastro}>
@@ -49,7 +64,7 @@ export default function PaginaDeCadastro() {
           
           {/* Nome Completo */}
           <div className={styles.grupoCampo}>
-            <label htmlFor="nome" className={styles.textoCampo}>Nome Completo</label>
+            <label htmlFor="nome" className={styles.textoCampo}>Nome do Usuário</label>
             <input
               type="text"
               id="nome"
@@ -57,6 +72,19 @@ export default function PaginaDeCadastro() {
               value={nome}
               onChange={(e) => setNome(e.target.value)}
             />
+          </div>
+
+          {/* E-mail */}
+          <div className={styles.grupoCampo}>
+            <label htmlFor="email" className={styles.textoCampo}>Endereço de e-mail</label>
+            <input
+              type="email"
+              id="email"
+              className={`${styles.inputCadastro} ${!emailValido ? styles.inputErro : ""}`}
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+            {!emailValido && <span className={styles.mensagemErro}>E-mail inválido.</span>}
           </div>
 
           {/* CPF */}
@@ -71,19 +99,6 @@ export default function PaginaDeCadastro() {
               placeholder="000.000.000-00"
             />
             {!cpfValido && <span className={styles.mensagemErro}>CPF inválido.</span>}
-          </div>
-
-          {/* E-mail */}
-          <div className={styles.grupoCampo}>
-            <label htmlFor="email" className={styles.textoCampo}>Endereço de e-mail</label>
-            <input
-              type="email"
-              id="email"
-              className={`${styles.inputCadastro} ${!emailValido ? styles.inputErro : ""}`}
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-            {!emailValido && <span className={styles.mensagemErro}>E-mail inválido.</span>}
           </div>
 
           {/* Senha */}
@@ -105,18 +120,40 @@ export default function PaginaDeCadastro() {
             </div>
             {!senhaValida && (
               <span className={styles.mensagemErro}>
-                A senha deve conter uma Letra Maiúscula, um Número e um Caractere Especial.
+                A senha deve conter Letra Maiúscula, Número e Caractere Especial.
               </span>
             )}
           </div>
 
-          {/* Botões Lado a Lado */}
+          {/* Confirmação de Senha */}
+          <div className={styles.grupoCampo}>
+            <label htmlFor="confirmarSenha" className={styles.textoCampo}>Confirmação de Senha</label>
+            <div className={styles.areaSenha}>
+              <input
+                type={mostrarConfimarSenha ? "text" : "password"}
+                id="confirmarSenha"
+                className={`${styles.inputCadastro} ${!senhasBatem ? styles.inputErro : ""}`}
+                value={confirmarSenha}
+                onChange={(e) => setConfirmarSenha(e.target.value)}
+              />
+              <FontAwesomeIcon
+                icon={mostrarConfimarSenha ? faEyeSlash : faEye}
+                className={styles.iconeOlho}
+                onClick={() => setMostrarConfirmarSenha((prev) => !prev)}
+              />
+            </div>
+            {!senhasBatem && (
+              <span className={styles.mensagemErro}>As senhas não coincidem.</span>
+            )}
+          </div>
+
+          {/* Botões Enviar e Cancelar */}
           <div className={styles.botoesContainer}>
             <button className={styles.botaoEnviarEsquerda} onClick={handleCadastrar}>
               Enviar
             </button>
             <Link to="/" className={styles.botaoCancelar}>
-              Cancelar
+              Cancele
             </Link>
           </div>
 
@@ -124,9 +161,7 @@ export default function PaginaDeCadastro() {
       </div>
 
       {/* Ícone flutuante */}
-      <div className={styles.circuloMensagem}>
-        <FontAwesomeIcon icon={faMessage} className={styles.iconeMensagem} />
-      </div>
+      <Chat/> 
 
     </div>
   );

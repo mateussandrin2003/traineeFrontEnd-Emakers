@@ -1,0 +1,38 @@
+.circuloMensagem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 61px;
+    height: 61px;
+    border-radius: 50%;
+    background-color: #87154C; /* Cor padrão estabelecida */
+    position: absolute;
+    bottom: 30px;
+    right: 54px;
+    cursor: pointer;
+    box-shadow: 0px 4px 20px 0px #00000040; /* Sombra padrão */
+    z-index: 10;
+    transition: transform 0.2s, opacity 0.2s;
+}
+
+.circuloMensagem:hover {
+    transform: scale(1.05); /* Efeito sênior sutil de aproximação ao passar o mouse */
+    opacity: 0.9;
+}
+
+.iconeMensagem {
+    color: white;
+    font-size: 28px;
+}
+
+.containerChat {
+    /* 🌟 O SEGREDO: Faz o ícone ficar travado na tela durante a rolagem */
+    position: fixed; 
+    
+    /* Ajusta a distância que ele vai ficar do canto inferior direito da tela */
+    bottom: 30px; 
+    right: 30px; 
+    
+    /* Mantém o ícone acima de absolutamente tudo (inclusive da divisória e imagens) */
+    z-index: 9999; 
+}

@@ -3,8 +3,11 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash, faMessage } from "@fortawesome/free-regular-svg-icons";
 
+import Logo from "../../components/Logo/Logo";
+import Chat from "../../components/Chat/Chat";
+
+// Importando o CSS Module exclusivo do Login
 import styles from "./Login.module.css";
-import logo from "../../assets/Imagens/Logo.png"; 
 
 export default function PaginaDeLogin() {
   const [mostrarSenha, setMostrarSenha] = useState(false);
@@ -31,12 +34,10 @@ export default function PaginaDeLogin() {
   return (
     <div className={styles.bodyBackground}>
       
-      {/* Logo no canto superior esquerdo */}
-      <Link to="/plataforma">
-        <img src={logo} alt="Logo" className={styles.logo} />
-      </Link>
+      {/* 🌟 PASSO 2: Substituímos o <Link> e a <img> antiga por apenas uma linha limpa! */}
+      <Logo />
 
-      {/* 🌟 NOVO LUGAR: Link de Cadastro no canto superior direito da tela */}
+      {/* Link de Cadastro no canto superior direito da tela */}
       <Link to="/cadastro" className={styles.botaoCadastrese}>
         Cadastre-se agora
       </Link>
@@ -103,7 +104,7 @@ export default function PaginaDeLogin() {
         </div>
       </div>
 
-      {/* 🌟 NOVO LUGAR: Link de ajuda centralizado perfeitamente logo abaixo do quadrado */}
+      {/* Link de ajuda centralizado logo abaixo do quadrado */}
       <div className={styles.containerBaseLogin}>
         <a href="https://www.google.com/" className={styles.textoAjuda}>
           Precisa de ajuda para entrar?
@@ -111,9 +112,7 @@ export default function PaginaDeLogin() {
       </div>
 
       {/* Ícone de mensagem flutuante */}
-      <div className={styles.circuloMensagem}>
-        <FontAwesomeIcon icon={faMessage} className={styles.iconeMensagem} />
-      </div>
+      <Chat />
 
     </div>
   );

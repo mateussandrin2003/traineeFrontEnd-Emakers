@@ -5,7 +5,9 @@ import { faMessage } from "@fortawesome/free-regular-svg-icons";
 
 // Importando o CSS Module exclusivo da página de Registro/Recuperação
 import styles from "./Registro.module.css";
-import logo from "../../assets/Imagens/Logo.png"; 
+import Logo from "../../components/Logo/Logo";
+import Chat from "../../Components/Chat/Chat";
+
 
 export default function RecuperarSenha() {
   const [email, setEmail] = useState("");
@@ -26,9 +28,7 @@ export default function RecuperarSenha() {
     <div className={styles.bodyBackground}>
       
       {/* Logo */}
-      <Link to="/plataforma">
-        <img src={logo} alt="Logo" className={styles.logo} />
-      </Link>
+      <Logo />
 
       {/* Título e Subtítulo */}
       <h1 className={styles.tituloDegrade}>Redefina sua senha</h1>
@@ -71,9 +71,7 @@ export default function RecuperarSenha() {
       </div>
 
       {/* Ícone flutuante */}
-      <div className={styles.circuloMensagem}>
-        <FontAwesomeIcon icon={faMessage} className={styles.iconeMensagem} />
-      </div>
+      <Chat/>
 
     </div>
   );
